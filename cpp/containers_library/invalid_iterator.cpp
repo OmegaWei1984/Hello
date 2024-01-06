@@ -3,6 +3,7 @@
 #include <deque>
 #include <list>
 #include <vector>
+#include <map>
 
 using namespace std;
 
@@ -99,6 +100,14 @@ int main()
     auto it3_begin = q.begin();
     q.insert(it3_begin, {-2, -1});
     q.insert(it3_begin, 0);
+
+    map<int, char> m;
+    m.insert({1, 'a'});
+    m.insert({2, 'b'});
+    auto it4 = m.find(1);
+    m.erase(2);
+    auto it4_ = m.find(1);
+    assert(it4 == it4_);
 
     return 0;
 }
