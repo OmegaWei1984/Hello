@@ -1,4 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 project(helloCpp LANGUAGES CXX)
 
-add_subdirectory(containers_library containers_library)
+set(TARGETS "containers_library;expression;memory")
+
+foreach(TARGET IN LISTS TARGETS)
+    MESSAGE(STATUS ${TARGET})
+    add_subdirectory(${TARGET} ${TARGET})
+endforeach()
