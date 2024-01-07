@@ -1,4 +1,4 @@
-SET(TARGETS "invalid_iterator")
+SET(TARGETS "invalid_iterator;string")
 
 foreach(TARGET IN LISTS TARGETS)
     MESSAGE(STATUS containers_library/${TARGET})
