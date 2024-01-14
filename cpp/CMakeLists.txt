@@ -1,7 +1,9 @@
 cmake_minimum_required(VERSION 3.22)
 project(helloCpp LANGUAGES CXX)
 
-set(TARGETS "built-in_types;containers_library;design_patterns;expression;memory")
+include_directories(${PROJECT_SOURCE_DIR})
+
+set(TARGETS "built-in_types;compiling;containers_library;design_patterns;expression;memory")
 
 foreach(TARGET IN LISTS TARGETS)
     MESSAGE(STATUS ${TARGET})
