@@ -3,7 +3,16 @@ project(helloCpp LANGUAGES CXX)
 
 include_directories(${PROJECT_SOURCE_DIR})
 
-set(TARGETS "built-in_types;compiling;containers_library;design_patterns;expression;memory")
+set(TARGETS
+built-in_types
+class_and_struct
+compiling
+containers_library
+declaration
+design_patterns
+expression
+memory
+)
 
 foreach(TARGET IN LISTS TARGETS)
     MESSAGE(STATUS ${TARGET})
