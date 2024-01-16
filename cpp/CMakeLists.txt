@@ -12,6 +12,7 @@ declaration
 design_patterns
 exceptions
 expression
+functions
 memory
 pointers
 )
