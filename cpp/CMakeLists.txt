@@ -10,8 +10,10 @@ compiling
 containers_library
 declaration
 design_patterns
+exceptions
 expression
 memory
+pointers
 )
 
 foreach(TARGET IN LISTS TARGETS)
