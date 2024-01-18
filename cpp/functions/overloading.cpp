@@ -21,6 +21,7 @@
  */
 
 #include "lib/common.hpp"
+#include <vector>
 
 typedef int i;
 
@@ -61,10 +62,79 @@ void foo(Foo foo, int num)
     assert(num == 1);
 }
 
+class Bar
+{
+public:
+    Bar()
+    {
+    }
+    Bar(Bar &bar)
+    {
+    }
+    Bar(const Bar &bar)
+    {
+    }
+    Bar(volatile Bar &bar)
+    {
+    }
+    static void test()
+    {
+    }
+    //  ‘void Bar::test()’ cannot be overloaded with ‘static void Bar::test()’
+    // void test()
+    // {
+    // }
+};
+
+class Baz
+{
+private:
+    std::vector<int> m_data;
+public:
+    std::vector<int> get() &
+    {
+        return m_data;
+    }
+    std::vector<int> get() &&
+    {
+        return std::move(m_data);
+    }
+};
+
+void func(int i)
+{
+}
+
+void func(char *sz)
+{
+}
+
 int main()
 {
+    /*
+     * error: call of overloaded ‘foo(int)’ is ambiguous
+     * candidate: ‘void foo(int)’
+     * candidate: ‘void foo(float)’
+     * ‘void foo(const int&)’
+     * ‘void foo(int&&)’
+     */
+    // foo(42);
     Foo f;
     // 匹配 (Foo, double), double 能转换为 int
     foo(f, 1.1);
+    Bar b1;
+    Bar b2(b1);
+    const Bar b3;
+    Bar b4(b3);
+    volatile Bar b5;
+    Bar b6(b5);
+    Baz baz;
+    auto v = baz.get();
+    auto v2 = Baz().get();
+    extern void func(char *sz);
+    // error: invalid conversion from ‘int’ to ‘char*’
+    // func(42); // func( int ) is h idden
+    func("hello");
+
     return 0;
 }
