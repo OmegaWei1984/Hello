@@ -16,6 +16,7 @@ functions
 memory
 paradigms
 pointers
+strings_library
 )
 
 foreach(TARGET IN LISTS TARGETS)
