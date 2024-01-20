@@ -14,6 +14,7 @@ exceptions
 expression
 functions
 memory
+paradigms
 pointers
 )
 

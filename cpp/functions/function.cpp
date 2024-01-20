@@ -74,6 +74,11 @@ pf2 sum2()
     return sum;
 }
 
+int sqr(int num)
+{
+    return num * num;
+}
+
 int main()
 {
     int i = sum(10, 32);
@@ -93,6 +98,8 @@ int main()
     assert(b0 == 42);
     pf = &sum;
     i = (*pf)(32, 10);
+    auto pSqr = sqr;
+    assert((*pSqr)(3) == 9);
 
     return 0;
 }
