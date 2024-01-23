@@ -4,6 +4,7 @@ project(helloCpp LANGUAGES CXX)
 include_directories(${PROJECT_SOURCE_DIR})
 
 set(TARGETS
+algorithms_library
 built-in_types
 class_and_struct
 compiling
@@ -13,6 +14,7 @@ design_patterns
 exceptions
 expression
 functions
+iterator_library
 memory
 paradigms
 pointers
