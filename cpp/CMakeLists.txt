@@ -16,6 +16,7 @@ expression
 functions
 iterator_library
 memory
+multithreading
 paradigms
 pointers
 strings_library
