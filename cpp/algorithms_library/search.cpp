@@ -21,8 +21,10 @@ int main()
     }
     std::vector<int>::iterator found2 =
         std::find(v.begin(), v.end(), 4);
-    std::multiset<int> s{4, 3, 1, 2, 5, 3, 6, 1};
+    std::multiset<int> s{1, 1, 2, 3, 3, 4, 5, 5, 6, 7, 8, 9, 9};
     std::multiset<int>::iterator found3 = s.find(5);
+    std::multiset<int>::iterator lower = s.lower_bound(5);
+    std::multiset<int>::iterator upper = s.upper_bound(5);
 
     return 0;
 }
