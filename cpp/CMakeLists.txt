@@ -15,6 +15,7 @@ exceptions
 expression
 functions
 iterator_library
+lifetime
 memory
 multithreading
 paradigms
